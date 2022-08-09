@@ -12,7 +12,7 @@ This script depends on xautomation to run efficiently. To install `xautomation`,
 
 `sudo apt update && sudo apt install xautomation`
 
-With that done, Download the [config.yml]() file above in your home directory and modify the IP address indicated therein. 
+With that done, Download the [config.yml](https://raw.githubusercontent.com/05t3/Bash-Scripts/main/Wazuh-Install/config.yml) file above in your home directory and modify the IP address indicated therein. 
 
 ![image](https://user-images.githubusercontent.com/58165365/183697878-bb15a4c5-c839-40ab-8417-08010cca021a.png)
 
