@@ -8,7 +8,7 @@ You can read more about Wazuh from their website.
 
 -----
 
-This script depends on xautomation to run efficiently. To install `xautomation`, run the following command on a freshly installed server.
+This [script](https://raw.githubusercontent.com/05t3/Bash-Scripts/main/Wazuh-Install/install.sh) depends on `xautomation` to run efficiently. To install `xautomation`, run the following command on a freshly installed server.
 
 `sudo apt update && sudo apt install xautomation`
 
@@ -23,6 +23,13 @@ To install the whole cluster, run:
 `source install.sh`
 
 Then run `install`.
+
+![image](https://user-images.githubusercontent.com/58165365/183701089-22c3c505-5a05-4e8a-b0c9-a60f4caf8e3e.png)
+
+Once installation completes, it gives you the UI URL, login credentials and checks whether the required services are up and running
+
+![image](https://user-images.githubusercontent.com/58165365/183700306-1d35aa17-e95f-4e87-bffa-3fd7c106b1dc.png)
+
 
 ## Notes
 
