@@ -1,0 +1,15 @@
+nodes:
+  # Wazuh indexer nodes
+  indexer:
+    - name: node-1
+      ip: 192.168.125.151
+
+  # Wazuh server nodes
+  server:
+    - name: wazuh-1
+      ip: 192.168.125.151
+
+  # Wazuh dashboard node
+  dashboard:
+    - name: dashboard
+      ip: 192.168.125.151
