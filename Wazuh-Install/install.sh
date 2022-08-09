@@ -14,5 +14,5 @@ function service() {
 	systemctl list-units --type=service --state=running | egrep "filebeat.service|wazuh-dashboard.service|wazuh-indexer.service|wazuh-manager.service"
 }
 function install() {
-	indexer server dashboard service
+	indexer && server && dashboard && service
 }
