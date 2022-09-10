@@ -8,17 +8,13 @@ You can read more about Wazuh from their website.
 
 -----
 
-This [script](https://raw.githubusercontent.com/05t3/Bash-Scripts/main/Wazuh-Install/install.sh) depends on `xautomation` to run efficiently. To install `xautomation`, run the following command on a freshly installed server.
-
-`sudo apt update && sudo apt install xautomation`
-
-With that done, Download the [config.yml](https://raw.githubusercontent.com/05t3/Bash-Scripts/main/Wazuh-Install/config.yml) file above in your home directory and modify the IP address indicated therein. 
+Download the [config.yml](https://raw.githubusercontent.com/05t3/Bash-Scripts/main/Wazuh-Install/config.yml) file above in your home directory and modify the IP address indicated therein. 
 
 ![image](https://user-images.githubusercontent.com/58165365/183697878-bb15a4c5-c839-40ab-8417-08010cca021a.png)
 
 > **NB:** _You need to have a static IP or a FQDN in order to proceed_
 
-To install the whole cluster, run:
+To install the wazuh indexer,server & dashboard run:
 
 `source install.sh`
 
