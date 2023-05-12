@@ -2,6 +2,8 @@
 #set e to automatically exit the script if any command fails.
 set -e
 
+
+#check that the user provided an IP address as an argument.
 if [[ -z "$1" ]]; then
   echo "Usage: $0 <ip_address>"
   exit 1
