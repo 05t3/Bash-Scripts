@@ -15,6 +15,7 @@ directory="/home/ubuntu/report/nmap_scans"
 comprehensive=Full_Port_Scan_For.$timestamp.txt
 final=Services_Running_On.$timestamp.txt
 
+#check that the directory where the output files are going to be saved actually exists.
 if [[ ! -d "$directory" ]]; then
   echo "Directory $directory does not exist"
   exit 1
