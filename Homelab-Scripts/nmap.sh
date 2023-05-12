@@ -1,5 +1,5 @@
 #!/bin/bash
-#set e to make the script exit if it encounters an error
+#set e to automatically exit the script if any command fails.
 set -e
 
 if [[ -z "$1" ]]; then
