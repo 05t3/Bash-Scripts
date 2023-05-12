@@ -1,5 +1,5 @@
 #!/bin/bash
-#set e to automatically exit the script if any command fails.
+#set e to automatically exit if any command fails.
 set -e
 
 
@@ -22,3 +22,4 @@ if [[ ! -d "$directory" ]]; then
 fi
 
 sudo nmap -sCV -T4 -p- "$ip" --system-dns > "$directory/$comprehensive" && cat "$directory/$comprehensive" | egrep "open|filtered|closed" > "$directory/$final"
+#All I did was make error-proof the script lol
