@@ -169,8 +169,8 @@ done < "$1"
 for pid in "${pids[@]}"; do
   wait $pid
   if [ $? -eq 0 ]; then
-    echo "\033[32m[\u2714] Command with PID $pid completed successfully.\033[0m"
+    echo -e "\033[32m[\u2714] Command with PID $pid completed successfully.\033[0m"
   else
-    echo "\033[31m\u274C Command with PID $pid failed.\033[0m"
+    echo -e "\033[31m\u274C Command with PID $pid failed.\033[0m"
   fi
 done
