@@ -4,8 +4,9 @@
 
 
 #!/bin/bash
-
-if [ -z $1 ]; then                                                                                                                                                                                                                                                             
+#using double quotes to handle cases where the argument contains spaces or special characters.
+#if [ -z $1 ]; then
+if [ -z "$1" ]; then
         user=$(whoami)                                                                                                                                                                                                                                                         
 else                                                                                                                                                                                                                                                                           
         if [ ! -d "/home/$1" ]; then                                                                                                                                                                                                                                           
@@ -36,7 +37,10 @@ function total_archived_files {
         tar -tzf $1 | grep -v /$ | wc -l
 }
 
-tar -czf $output $input 2> /dev/null
+
+#Displaying errors to the user or logging them to a separate file rather than directing them to /dev/null
+#tar -czf $output $input 2> /dev/null
+tar -czf "$output" -C "$input" . 2>&1
 
 src_files=$( total_files $input )
 src_directories=$( total_directories $input )
@@ -54,5 +58,7 @@ if [ $src_files -eq $arch_files ]; then
         echo "Details about the output backup file:"
         ls -l $output
 else
-        echo "Backup of $input failed!"
+        #echo "Backup of $input failed!"
+        #including a timestamp in the error message when the backup fails. 
+        echo "Backup of $input failed at $(date +%Y-%m-%d_%H%M%S)."
 fi
