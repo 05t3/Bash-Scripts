@@ -10,9 +10,30 @@ function interrupt_handler {
 # Tell the script to execute the interrupt_handler function when it receives SIGINT
 trap interrupt_handler SIGINT
 
-
 # An array to store the PIDs
 pids=()
+
+
+# Function to execute a command in the background and store the PID
+function execute_command {
+    local command=$1
+    local pid
+    nohup bash -c "$command" >/dev/null 2>&1 &
+    pid=$!
+    pids+=($pid)
+}
+
+# Function to check the status of each background job
+function check_job_status {
+    local pid=$1
+    wait $pid
+    local exit_code=$?
+    if [ $exit_code -eq 0 ]; then
+        echo -e "\033[32m[\u2714] Command with PID $pid completed successfully.\033[0m"
+    else
+        echo -e "\033[31m\u274C Command with PID $pid failed with exit code $exit_code.\033[0m"
+    fi
+}
 
 echo -e " 
 
